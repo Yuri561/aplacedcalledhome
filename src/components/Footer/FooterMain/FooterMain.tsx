@@ -1,11 +1,8 @@
 import React from "react";
 import {
-  Facebook,
-  Instagram,
   Mail,
   MapPin,
   Phone,
-  Youtube,
 } from "lucide-react";
 
 const FooterMain: React.FC = () => {
@@ -26,7 +23,7 @@ const FooterMain: React.FC = () => {
         </p>
 
         <div className="mt-4 flex gap-3">
-          {[Facebook, Instagram, Youtube, Mail].map(
+          {[Mail].map(
             (Icon, index) => (
               <a
                 key={index}
