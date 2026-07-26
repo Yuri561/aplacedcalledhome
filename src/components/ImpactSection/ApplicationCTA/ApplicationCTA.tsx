@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import ContactModal from "../../ContactModal/ContactModal";
 
 const benefits = [
   "Easy Application Process",
@@ -8,6 +9,7 @@ const benefits = [
 ];
 
 const ApplicationCTA: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="flex flex-col gap-6 border-t border-[#C88A2A]/35 pt-6 lg:flex-row lg:items-center lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
       <div className="flex-1">
@@ -37,10 +39,15 @@ const ApplicationCTA: React.FC = () => {
           ))}
         </div>
 
-        <button className="mt-4 flex items-center gap-4 rounded-md bg-[#0B2A4A] px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-white transition hover:bg-[#123C67]">
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="mt-4 flex items-center gap-4 rounded-md bg-[#0B2A4A] px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-white transition hover:bg-[#123C67]"
+        >
           Start Your Application
           <ArrowRight size={15} />
+
         </button>
+        <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </div>
 
       <div className="flex h-[126px] w-[126px] shrink-0 items-center justify-center rounded-full border-2 border-[#C88A2A] text-center">

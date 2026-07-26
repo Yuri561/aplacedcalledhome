@@ -1,14 +1,16 @@
-import React from "react";
 import {
   ShieldCheck,
   Home,
   Users,
-  ArrowRight,
-  CalendarDays,
+//   ArrowRight,
+//   CalendarDays,
   Heart,
 } from "lucide-react";
+// import { useState } from "react";
+// import ContactModal from "../ContactModal/ContactModal";
 
 const Hero = () => {
+    // const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <section className="relative overflow-hidden bg-[#FFFDF8]">
       <div className="grid min-h-[620px] grid-cols-1 lg:grid-cols-[45%_55%] xl:grid-cols-[42%_58%]">
@@ -46,9 +48,10 @@ const Hero = () => {
             individuals.
           </p>
 
-          {/* Buttons */}
+          {/* Buttons
           <div className="relative mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
             <button
+              onClick={() => setIsModalOpen(true)}
               type="button"
               className="flex w-full items-center justify-center gap-4 rounded-md bg-[#0B2A4A] px-5 py-3.5 text-[11px] font-semibold uppercase tracking-wide text-white shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-[#123C67] sm:w-auto sm:px-6 sm:py-4 sm:text-xs"
             >
@@ -56,14 +59,17 @@ const Hero = () => {
               <ArrowRight size={16} />
             </button>
 
+
             <button
+              onClick={() => setIsModalOpen(true)}
               type="button"
               className="flex w-full items-center justify-center gap-3 rounded-md border border-[#C88A2A] bg-white/70 px-5 py-3.5 text-[11px] font-semibold uppercase tracking-wide text-[#0B2A4A] transition duration-300 hover:-translate-y-0.5 hover:bg-[#FFF8EC] sm:w-auto sm:px-6 sm:py-4 sm:text-xs"
             >
               <CalendarDays size={17} className="text-[#C88A2A]" />
               Schedule a Tour
             </button>
-          </div>
+            <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+          </div> */}
 
           {/* Features */}
           <div className="relative mt-8 grid grid-cols-1 gap-4 sm:mt-9 sm:grid-cols-3 sm:gap-0">

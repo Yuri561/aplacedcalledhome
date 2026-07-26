@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ArrowRight,
   CalendarDays,
   MapPin,
   Phone,
 } from "lucide-react";
+import ContactModal from "../../ContactModal/ContactModal";
 
 const FooterCTA: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="border-b border-white/20">
       <div className="mx-auto flex max-w-[1500px] flex-col gap-6 px-6 py-5 lg:flex-row lg:items-center lg:justify-between lg:px-8">
@@ -33,10 +35,11 @@ const FooterCTA: React.FC = () => {
         </div>
 
         {/* Tour button */}
-        <button className="flex items-center justify-center gap-4 rounded-md bg-[#C88A2A] px-6 py-3 text-[11px] font-semibold uppercase tracking-wide text-white transition hover:bg-[#D89A39]">
+        <button onClick={() => setIsModalOpen(true)} className="flex items-center justify-center gap-4 rounded-md bg-[#C88A2A] px-6 py-3 text-[11px] font-semibold uppercase tracking-wide text-white transition hover:bg-[#D89A39]">
           Schedule Your Tour
           <ArrowRight size={15} />
         </button>
+        <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
         {/* Contact info */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center">

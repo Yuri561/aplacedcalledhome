@@ -5,7 +5,6 @@ import { bannerData } from "./bannerData";
 const Banner: React.FC = () => {
   return (
     <section id="about" className="relative z-20 bg-[#062E55] text-white">
-      {/* Smooth curved transition from Hero into Banner */}
       <div
         className="
           pointer-events-none
@@ -24,7 +23,7 @@ const Banner: React.FC = () => {
           aria-hidden="true"
         >
           <defs>
-            {/* Slight depth inside the navy curve */}
+
             <linearGradient
               id="bannerNavyGradient"
               x1="0"
@@ -36,7 +35,6 @@ const Banner: React.FC = () => {
               <stop offset="100%" stopColor="#062E55" />
             </linearGradient>
 
-            {/* Soft shadow under gold curve */}
             <filter
               id="curveShadow"
               x="-10%"
